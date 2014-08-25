@@ -15,9 +15,10 @@ class View {
 
     public function getPage($params = null) {
         $contents = file_get_contents($this->fPage);
-        foreach ($params as $chave => $valor) {
-            $contents = str_replace('{{' . $chave . '}}', $valor, $contents);
-        }
+        if ($params)
+            foreach ($params as $chave => $valor)
+                $contents = str_replace('{{' . $chave . '}}', $valor, $contents);
+
         $this->page = str_replace('{{PAGE}}', $contents, $this->page);
         return $this->page;
     }
