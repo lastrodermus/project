@@ -22,5 +22,4 @@ class View {
         $this->page = str_replace('{{PAGE}}', $contents, $this->page);
         return $this->page;
     }
-fjdjfadsajfkdsajfdjsf
 }
