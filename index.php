@@ -27,6 +27,8 @@ else
 $espaco = str_replace('_', ' ', $controller);
 $str = ucwords($espaco);
 $strC = str_replace(' ', '', $str) . 'Controller';
+if($strC == 'Controller')
+    $strC = 'HomeController';
 
 //determina a posição da primeira / dos parâmetros para separar Método de 
 //Argumentos.
@@ -56,11 +58,16 @@ $erroPagina = false;
 
 if (file_exists(CONTROLLER . $strC . '.class.php')) {
     require_once CONTROLLER . $strC . '.class.php';
-    $con = new $strC();
-    if (method_exists($con, $method))
-        $con->$method($argumentos);
+    $con = new $strC($argumentos);
+    
+    if ($method != 'get') {
+        if (method_exists($con, $method))
+            $con->$method();
+        else
+            $erroPagina = true;
+    }
     else
-        $erroPagina = true;
+        $con->getHome();
 } else {
     $erroPagina = true;
 }

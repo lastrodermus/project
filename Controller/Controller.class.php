@@ -1,12 +1,23 @@
 <?php
 
 class Controller {
-    protected function changeToArray($urlParameters = null, $urlKeys = null, $parameters = null){
+    protected $urlParameters;
+    protected $urlKeys;
+    public function __construct($urlParameters = null) {
+        if($urlParameters)
+            $this->urlParameters = explode ('/', $urlParameters);
+        else
+            $this->urlParameters = array();
+    }
+    
+    protected function changeToArray($parameters = null){
         $url = array();
         $params = array();
-        if($urlParameters){
-            $url = explode(',', $urlParameters);
-            $urlArray = array_combine($urlKeys, $url);
+        $urlArray = array();
+        if($this->urlParameters){
+            var_dump($url);
+            var_dump($this->urlKeys);
+            $urlArray = array_combine($this->urlKeys, $this->urlParameters);
         }
         return array_merge($urlArray, $parameters);
     }
