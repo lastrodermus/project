@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<templates>
+    <template nome="default">
+        <view>MENU_ESQUERDO</view>
+        <view>TOPO</view>
+    </template>
+    <template nome="teste">
+        <view>TOPO</view>
+    </template>
+</templates>
