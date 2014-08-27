@@ -9,6 +9,7 @@ define('VIEW', ROOT . 'View/');
 define('MODEL', ROOT . 'Model/');
 define('CONTROLLER', ROOT . 'Controller/');
 define('CONFIG', ROOT . 'config/');
+define('BD', ROOT . 'Base/');
 
 
 define('ROOT_WEB', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . PROJECT);

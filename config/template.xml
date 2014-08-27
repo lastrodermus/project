@@ -8,4 +8,14 @@
     <template nome="teste">
         <view>TOPO</view>
     </template>
+
+    <template nome="jogo">
+        <view>MAO_OPONENTE</view>
+        <view>DECK_OPONENTE</view>
+        <view>CEMITERIO</view>
+        <view>ZONA_ENCANTAMENTO</view>
+        <view>MAO_PLAYER</view>
+        <view>DECK_PLAYER</view>
+    </template>
+    
 </templates>
